@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 aaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaa
+=======
+hagahagahagahagahagahagahaga
+>>>>>>> a.txt変更
