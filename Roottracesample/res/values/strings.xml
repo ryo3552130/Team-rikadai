@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Roottracesample</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_location_text">My location</string>
+	<string name="destination_text">destination</string>
+	<string name="destination_btn">choose destination</string>
+	<string name="my_location_btn">get my location</string>
+	<string name="get_location_text">get my location</string>
+</resources>
