@@ -186,12 +186,12 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int Dbtn=0x7f05000a;
         public static final int Dtext=0x7f050007;
         public static final int GLtext=0x7f050008;
         public static final int LinearLayout1=0x7f050005;
-        public static final int MLbtn=0x7f050009;
         public static final int MLtext=0x7f050006;
+        public static final int Startbtn=0x7f050009;
+        public static final int Stopbtn=0x7f05000a;
         public static final int action_settings=0x7f05000c;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f05000b;
@@ -207,6 +207,8 @@ containing a value of this type.
         public static final int map_main=0x7f090000;
     }
     public static final class string {
+        public static final int Start_btn=0x7f06001e;
+        public static final int Stop_btn=0x7f06001d;
         public static final int action_settings=0x7f06001a;
         public static final int app_name=0x7f060019;
         /**   Title for notification shown when GooglePlayServices needs to be
@@ -299,10 +301,8 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060012;
-        public static final int destination_btn=0x7f06001d;
         public static final int destination_text=0x7f06001c;
         public static final int get_location_text=0x7f06001f;
-        public static final int my_location_btn=0x7f06001e;
         public static final int my_location_text=0x7f06001b;
     }
     public static final class style {
