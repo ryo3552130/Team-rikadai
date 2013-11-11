@@ -293,9 +293,9 @@ OnClickListener
 		insertValues.put(Date,date);
 		long ret = mydb.insert(TABLE_NAME, null, insertValues);
 		if (ret == -1) {//if insert is failed,it returns -1.
-            Toast.makeText(this, "Insert失敗", Toast.LENGTH_SHORT).show();  
+            Toast.makeText(this, "Insert failed", Toast.LENGTH_SHORT).show();  
         } else {   
-            Toast.makeText(this, "Insert成功", Toast.LENGTH_SHORT).show();  
+            Toast.makeText(this, "Insert successed", Toast.LENGTH_SHORT).show();  
         }  
 	}
 
