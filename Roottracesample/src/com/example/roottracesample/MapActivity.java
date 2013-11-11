@@ -1,10 +1,7 @@
 package com.example.roottracesample;
 
 
-
 import java.util.Date;
-
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -22,12 +19,15 @@ import android.os.Bundle;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +58,9 @@ OnClickListener
 	public static final String Lot = "lot";
 	public static final String Date = "date";
 	static SQLiteDatabase mydb;
+	static ArrayAdapter<String> adapter;
+	ListView list;
+	Context context;
 	// These settings are the same as the settings for the map. They will in fact give you updates
 	// at the maximal rates currently possible.
 	private static final LocationRequest REQUEST = LocationRequest.create()
@@ -254,6 +257,24 @@ OnClickListener
 		}else if (v == Stop_btn){
 			Toast.makeText(this, "Stop recording", Toast.LENGTH_LONG).show();
 			recording = false;
+			//show all data in the database.
+			//list = (ListView)findViewById(R.id.listView1);
+			ListView list = new ListView(this);
+			adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+			Cursor cursor = mydb.query(TABLE_NAME, new String[] {ID,Lat,Lot,Date}, null, null, null, null,null);
+			boolean isEof = cursor.moveToFirst();
+			        while (isEof) {
+			           String listdata = String.format("id: %s lat: %s lot :%s date: %s", cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3));
+			           adapter.add(listdata); 
+			           isEof = cursor.moveToNext();
+			        }
+
+			        
+					list.setAdapter(adapter);
+					setContentView(list);
+					//if you want to delete all of sqlite's data,execute under the command.
+					//mydb.execSQL(DROP_TABLE);
+			
 		}
 
 	}	
