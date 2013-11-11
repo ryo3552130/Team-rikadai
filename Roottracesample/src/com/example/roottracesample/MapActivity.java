@@ -202,8 +202,8 @@ OnClickListener
 			String now = nowdate.toString();
 			String ScurrentLat = ""+currentLat;
 			String ScurrentLot = ""+currentLot;
-			//InsertDate(ScurrentLat,ScurrentLot,now);
-			InsertDate("aaa","ccc","vvvv");
+			InsertDate(ScurrentLat,ScurrentLot,now);
+			
 		}
 	}
 
