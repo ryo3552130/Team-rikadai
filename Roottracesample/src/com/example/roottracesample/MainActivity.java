@@ -2,32 +2,28 @@ package com.example.roottracesample;
 
 
 
+import android.content.Intent;
+import android.location.Location;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.GoogleMap.OnMyLocationChangeListener;
 import com.google.android.gms.maps.model.LatLng;
-
-import android.location.Location;
-import android.net.Uri;
-import android.os.Bundle;
-import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 	public class MainActivity extends FragmentActivity implements
 	ConnectionCallbacks,
@@ -67,8 +63,8 @@ super.onResume();
 setUpMapIfNeeded();
 setUpLocationClientIfNeeded();
 mLocationClient.connect();
-my_location_btn = (Button)findViewById(R.id.MLbtn);
-destination_btn= (Button)findViewById(R.id.Dbtn);
+my_location_btn = (Button)findViewById(R.id.Startbtn);
+destination_btn= (Button)findViewById(R.id.Stopbtn);
 my_location_btn.setOnClickListener(this);
 destination_btn.setOnClickListener(this);
 mMap.setOnMapClickListener(new OnMapClickListener() {
